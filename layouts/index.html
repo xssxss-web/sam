@@ -1,0 +1,78 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">{{ site.Params.siteType }}</p>
+    <h1>Your Trusted Yiwu Sourcing Partner</h1>
+    <p class="hero-text">Factory-direct wholesale from China — door hardware, fasteners, rigging &amp; lifting, locks, solar products, wind power, and hand tools. Low MOQ, quality inspection, global shipping.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ "/products/" | relURL }}">Browse Products</a>
+      <a class="btn secondary" href="{{ "/contact/" | relURL }}">Send Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2>What We Do</h2>
+  <div class="category-grid">
+    <div class="category-card">
+      <h3>🔍 Product Sourcing</h3>
+      <p>We find reliable factories and suppliers across Yiwu and China for hardware, solar, wind power, locks and tools. You tell us what you need — we source it.</p>
+    </div>
+    <div class="category-card">
+      <h3>✅ Quality Control</h3>
+      <p>Pre-shipment inspection, factory audit, material verification, and packing check. We ensure your goods meet specifications before they leave China.</p>
+    </div>
+    <div class="category-card">
+      <h3>📦 Mixed Wholesale</h3>
+      <p>Combine different products from multiple suppliers into one shipment. Small trial orders, low MOQ, and mixed container loading supported.</p>
+    </div>
+    <div class="category-card">
+      <h3>🚢 Global Shipping</h3>
+      <p>Sea freight, air freight, express courier, FBA prep and labeling. We handle logistics so your goods arrive safely at your warehouse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2>Product Categories</h2>
+  <p class="section-subtitle">Through our supplier network in Yiwu and across China, we help buyers source products from 7 major industrial and hardware categories.</p>
+  <div class="category-grid">
+    {{ range sort site.Data.categories "priority" }}
+      <a class="category-card" href="{{ "/categories/" | relURL }}{{ .slug }}/">
+        <h3>{{ .name }}</h3>
+        <p>{{ .description }}</p>
+      </a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="container section">
+  <h2>Why Choose MikeOK</h2>
+  <div class="why-grid">
+    {{ range slice
+      (dict "title" "Yiwu-Based Team" "desc" "Our office is inside the Yiwu International Trade City. We know the market, the suppliers, and the logistics inside out.")
+      (dict "title" "Factory-Direct Pricing" "desc" "No middlemen. We connect you directly with verified manufacturers and negotiate the best factory prices on your behalf.")
+      (dict "title" "Flexible MOQ" "desc" "Unlike many factories that demand large minimum orders, we support small trial orders, mixed SKUs, and gradual scaling.")
+      (dict "title" "Full Service" "desc" "From sourcing and sampling to inspection, consolidation, customs clearance, and shipping — we handle the entire process.")
+      (dict "title" "Quality Assurance" "desc" "Every shipment is inspected before departure. Photos, videos, and inspection reports provided for your peace of mind.")
+      (dict "title" "Long-Term Partnership" "desc" "We build relationships, not one-time deals. Your success is our success — we grow your supply chain with you.")
+    }}
+      <div class="why-card">
+        <h3>{{ .title }}</h3>
+        <p>{{ .desc }}</p>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2>Ready to Source from Yiwu?</h2>
+    <p>Send us your product requirements or browse our wholesale catalog. We'll reply with a quotation within 24 hours.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn primary" href="{{ "/contact/" | relURL }}">Get Free Quote</a>
+      <a class="btn secondary" href="https://wa.me/{{ replace (replace site.Params.whatsapp "+" "") "-" "" }}">WhatsApp Now</a>
+    </div>
+  </div>
+</section>
+{{ end }}

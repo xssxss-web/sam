@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand-name">{{ site.Title }}</span>
+      <span class="brand-sub">{{ site.Params.slogan }}</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+      {{ end }}
+      <div class="nav-drop">
+        <a href="{{ "/products/" | relURL }}" class="nav-link">Categories ▾</a>
+        <div class="drop-menu">
+          {{ range sort site.Data.categories "priority" }}
+            <a href="{{ "/categories/" | relURL }}{{ .slug }}/">{{ .name }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </nav>
+    <a class="header-cta btn primary" href="https://wa.me/{{ replace (replace site.Params.whatsapp "+" "") "-" "" }}">WhatsApp</a>
+  </div>
+</header>

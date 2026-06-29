@@ -1,0 +1,20 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ .Title }},
+  "sku": {{ .Params.sku }},
+  "description": {{ .Description | default .Summary }},
+  {{ with .Params.main_image }}"image": {{ . | absURL }},{{ end }}
+  "brand": {
+    "@type": "Brand",
+    "name": {{ site.Title }}
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "price": {{ .Params.price_min_usd | default 0 }}
+  }
+}
+</script>

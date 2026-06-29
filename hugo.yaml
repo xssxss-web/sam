@@ -1,0 +1,64 @@
+baseURL: "https://mikeok.com/"
+languageCode: "en-us"
+title: "MikeOK — Yiwu Sourcing Agent & B2B Wholesale Supplier"
+theme: ""
+enableRobotsTXT: true
+summaryLength: 28
+
+taxonomies:
+  category: categories
+  tag: tags
+  buyer: buyers
+  usecase: usecases
+
+permalinks:
+  products: "/products/:slug/"
+  guides: "/guides/:slug/"
+
+params:
+  siteType: "B2B Sourcing & Wholesale"
+  businessPositioning: "Yiwu Sourcing Agent — Factory-Direct Wholesale from China"
+  defaultImage: "/images/default-product.jpg"
+  whatsapp: "+86-159-5793-6921"
+  email: "info@mikeok.com"
+  wechat: "mikeok_yiwu"
+  address: "Yiwu International Trade City, Zhejiang, China"
+  slogan: "Your Trusted Yiwu Sourcing Partner — Factory Prices, Quality Control, Global Shipping"
+  defaultMOQ: "Negotiable"
+  defaultLeadTime: "15-30 days"
+  defaultPayment: "30% deposit, 70% before shipment"
+
+menus:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 10
+    - name: "Products"
+      url: "/products/"
+      weight: 20
+    - name: "Services"
+      url: "/services/"
+      weight: 30
+    - name: "Wholesale Guides"
+      url: "/guides/"
+      weight: 40
+    - name: "About"
+      url: "/about/"
+      weight: 50
+    - name: "Contact"
+      url: "/contact/"
+      weight: 60
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false
+
+sitemap:
+  changefreq: "weekly"
+  priority: 0.7
+  filename: "sitemap.xml"

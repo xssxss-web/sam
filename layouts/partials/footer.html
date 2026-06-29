@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <section>
+      <h3>{{ site.Data.company.name }}</h3>
+      <p>{{ site.Data.company.positioning }}</p>
+      <p>{{ site.Data.company.location }}</p>
+    </section>
+    <section>
+      <h3>Categories</h3>
+      {{ range sort site.Data.categories "priority" }}
+        <a class="footer-link" href="{{ "/categories/" | relURL }}{{ .slug }}/">{{ .name }}</a>
+      {{ end }}
+    </section>
+    <section>
+      <h3>Quick Links</h3>
+      {{ range site.Data.footer.quick_links }}
+        <a class="footer-link" href="{{ .url }}">{{ .name }}</a>
+      {{ end }}
+    </section>
+    <section>
+      <h3>Contact</h3>
+      <p>WhatsApp: {{ site.Data.company.whatsapp }}</p>
+      <p>Email: <a href="mailto:{{ site.Data.company.email }}">{{ site.Data.company.email }}</a></p>
+      <p>WeChat: {{ site.Data.company.wechat }}</p>
+    </section>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {{ now.Format "2006" }} {{ site.Title }}. B2B sourcing &amp; wholesale from Yiwu China.</p>
+  </div>
+</footer>

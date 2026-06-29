@@ -1,0 +1,11 @@
+<article class="product-card">
+  <a href="{{ .RelPermalink }}">
+    {{ with .Params.main_image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy">{{ else }}<div class="image-placeholder">Product Image</div>{{ end }}
+    <div class="card-body">
+      <p class="sku">{{ .Params.sku }}</p>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Summary | plainify | truncate 110 }}</p>
+      {{ with .Params.moq_pcs }}<span class="badge">MOQ {{ . }} pcs</span>{{ end }}
+    </div>
+  </a>
+</article>

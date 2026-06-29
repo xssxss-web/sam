@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article class="container product-page">
+  {{ partial "breadcrumbs.html" . }}
+  <div class="product-layout">
+    <section class="product-media">
+      {{ with .Params.main_image }}<img class="main-image" src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ else }}<div class="image-placeholder large">Product Image</div>{{ end }}
+      {{ with .Params.gallery_images }}
+        <div class="gallery-thumbs">
+          {{ range . }}<img src="{{ . }}" alt="Gallery image" loading="lazy">{{ end }}
+        </div>
+      {{ end }}
+    </section>
+    <section class="product-info">
+      <p class="sku">{{ .Params.sku }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ .Params.summary | default .Description }}</p>
+      <div class="spec-table">
+        {{ with .Params.material }}<div><span>Material</span><strong>{{ . }}</strong></div>{{ end }}
+        {{ with .Params.size_cm }}<div><span>Size</span><strong>{{ . }} cm</strong></div>{{ end }}
+        {{ with .Params.weight_g }}<div><span>Weight</span><strong>{{ . }} g</strong></div>{{ end }}
+        {{ with .Params.color_options }}<div><span>Color Options</span><strong>{{ . }}</strong></div>{{ end }}
+        {{ with .Params.moq_pcs }}<div><span>MOQ</span><strong>{{ . }} pcs</strong></div>{{ end }}
+        {{ with .Params.packing }}<div><span>Packing</span><strong>{{ . }}</strong></div>{{ end }}
+        {{ with .Params.carton_qty_pcs }}<div><span>Carton Qty</span><strong>{{ . }} pcs</strong></div>{{ end }}
+        {{ with .Params.carton_size_cm }}<div><span>Carton Size</span><strong>{{ . }} cm</strong></div>{{ end }}
+        {{ with .Params.carton_gw_kg }}<div><span>Carton GW</span><strong>{{ . }} kg</strong></div>{{ end }}
+        {{ with .Params.lead_time_days }}<div><span>Lead Time</span><strong>{{ . }} days</strong></div>{{ end }}
+        {{ with .Params.price_min_usd }}<div><span>Price Range</span><strong>USD {{ . }}{{ with $.Params.price_max_usd }} &ndash; {{ . }}{{ end }}</strong></div>{{ end }}
+        {{ with .Params.sample_fee_usd }}<div><span>Sample Fee</span><strong>USD {{ . }}</strong></div>{{ end }}
+        {{ with .Params.customization_options }}<div><span>Customization</span><strong>{{ . }}</strong></div>{{ end }}
+        {{ with .Params.certifications }}<div><span>Certifications</span><strong>{{ . }}</strong></div>{{ end }}
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="https://wa.me/{{ replace (replace site.Params.whatsapp "+" "") "-" "" }}?text=I%20am%20interested%20in%20{{ .Params.sku }}%20{{ .Title }}">WhatsApp Inquiry</a>
+        <a class="btn secondary" href="mailto:{{ site.Params.email }}?subject=Inquiry%20{{ .Params.sku }}%20{{ .Title }}">Email Inquiry</a>
+      </div>
+    </section>
+  </div>
+  <section class="content">{{ .Content }}</section>
+  {{ with .Params.faq }}
+  <section class="section">
+    <h2>FAQ</h2>
+    {{ range . }}
+      <details class="faq"><summary>{{ .question }}</summary><p>{{ .answer }}</p></details>
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ with .Params.related_skus }}
+  <section class="section">
+    <h2>Related Products</h2>
+    <p>Also available: {{ delimit . ", " }}</p>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

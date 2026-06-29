@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="container page">
+  <h1>{{ .Title }}</h1>
+  <p class="lead">{{ .Description }}</p>
+  <div class="category-filter">
+    {{ range sort site.Data.categories "priority" }}
+      <a href="{{ "/categories/" | relURL }}{{ .slug }}/">{{ .name }}</a>
+    {{ end }}
+  </div>
+  <div class="product-grid">
+    {{ range .Pages }}
+      {{ partial "product-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

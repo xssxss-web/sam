@@ -1,0 +1,28 @@
+- slug: "door-hardware"
+  name: "Door Hardware"
+  description: "Hinges, handles, sliding door systems, barn door hardware, cabinet hardware, drawer slides, door closers and architectural ironmongery."
+  priority: 1
+- slug: "fasteners"
+  name: "Fasteners"
+  description: "Bolts, screws, nuts, washers, anchors, rivets, threaded rods and construction fasteners for industrial and commercial use."
+  priority: 2
+- slug: "rigging-lifting"
+  name: "Rigging & Lifting"
+  description: "Shackles, turnbuckles, wire rope fittings, lifting hooks, chain accessories and material handling hardware."
+  priority: 3
+- slug: "locks-security"
+  name: "Locks & Security"
+  description: "Smart locks, door locks, padlocks, bike locks, cam locks and security hardware for residential and commercial applications."
+  priority: 4
+- slug: "solar-products"
+  name: "Solar Products"
+  description: "Solar panels, portable solar systems, RV solar panel kits and solar accessories for renewable energy applications."
+  priority: 5
+- slug: "wind-power"
+  name: "Wind Power Products"
+  description: "Wind turbines, wind generators, hybrid wind-solar systems and wind power accessories for off-grid and residential use."
+  priority: 6
+- slug: "hand-tools"
+  name: "Hand Tools & Automotive"
+  description: "Wrenches, screwdrivers, pliers, automotive repair tools, tool sets and workshop equipment for professional and DIY use."
+  priority: 7

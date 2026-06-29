@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="container page">
+  <h1>{{ .Title }}</h1>
+  {{ with index (where site.Data.categories "slug" .Title) 0 }}
+    <p class="lead">{{ .description }}</p>
+  {{ end }}
+  <div class="product-grid">
+    {{ range .Pages }}
+      {{ partial "product-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

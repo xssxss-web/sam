@@ -1,0 +1,18 @@
+quick_links:
+  - name: "All Products"
+    url: "/products/"
+  - name: "Wholesale Guides"
+    url: "/guides/"
+  - name: "Services"
+    url: "/services/"
+  - name: "About Us"
+    url: "/about/"
+  - name: "Contact"
+    url: "/contact/"
+trade_terms:
+  - "Factory-direct wholesale from Yiwu"
+  - "Negotiable MOQ — small trial orders welcome"
+  - "OEM / ODM support"
+  - "Sample available"
+  - "Mixed order support"
+  - "Quality inspection & FBA prep"

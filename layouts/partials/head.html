@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.businessPositioning }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
+  <meta property="og:title" content="{{ .Title | default site.Title }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.businessPositioning }}{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:type" content="{{ if eq .Section "products" }}product{{ else }}website{{ end }}">
+  {{ with .Params.main_image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+  {{ if eq .Section "products" }}{{ partial "schema-product.html" . }}{{ end }}
+</head>
