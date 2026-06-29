@@ -1,7 +1,7 @@
 baseURL: "https://mikeok.com/"
 languageCode: "en-us"
 title: "MikeOK — Yiwu Sourcing Agent & B2B Wholesale Supplier"
-theme: ""
+# No theme - layouts/ provides all templates directly
 enableRobotsTXT: true
 summaryLength: 28
 
